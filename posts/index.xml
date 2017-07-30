@@ -19,7 +19,7 @@
       <guid>/posts/react-figwheel-npm/</guid>
       <description>Edit: 2017-07-30 Since publishing the original post, the Clojurescript team implemented CLJS-2280, which handles the work of shimming process.env for us.
 As if that wasn&amp;rsquo;t enough, the team also released Clojurescript 1.9.854, meaning that we no longer need to build the latest version of Clojurescript from source!
-The other thing that changed is that :npm-deps are no longer installed automatically, and the newly-added :install-deps build property is not yet supported in lein-cljsbuild, so I&amp;rsquo;m holding off on updating the tutorial until cljsbuild catches up for us 👍</description>
+The other thing that changed is that :npm-deps are no longer installed automatically, and the newly-added :install-deps build property is not yet supported in lein-figwheel, so I&amp;rsquo;m holding off on updating the tutorial until Figwheel catches up for us 👍</description>
     </item>
     
   </channel>
