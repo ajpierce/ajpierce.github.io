@@ -43,8 +43,8 @@
                     </h1>
                     <h2 class="headline">
                     Jul 26, 2017 15:58
-                    · 795 words
-                    · 4 minutes read
+                    · 884 words
+                    · 5 minutes read
                       <span class="tags">
                       
                       </span>
@@ -53,6 +53,21 @@
                 
                 <section id="post-body">
                     
+
+<h2 id="edit-2017-07-30">Edit: 2017-07-30</h2>
+
+<p>Since publishing the original post, the Clojurescript team implemented <a href="https://dev.clojure.org/jira/browse/CLJS-2280">CLJS-2280</a>,
+which handles the work of shimming <code>process.env</code> for us.</p>
+
+<p>As if that wasn&rsquo;t enough, the team also released Clojurescript <a href="https://github.com/clojure/clojurescript/blob/master/changes.md#19854">1.9.854</a>,
+meaning that we no longer need to build the latest version of Clojurescript from source!</p>
+
+<p>The other thing that changed is that <code>:npm-deps</code> are no longer installed
+automatically, and the <a href="https://github.com/clojure/clojurescript/commit/fb8ce05143dac9e9feb602be2544b72c87b337a3">newly-added</a>
+<code>:install-deps</code> build property is not yet supported in <code>lein-cljsbuild</code>, so I&rsquo;m
+holding off on updating the tutorial until cljsbuild catches up for us 👍</p>
+
+<h2 id="original-post">Original Post:</h2>
 
 <p>The Clojurescript team has been doing some <a href="https://clojurescript.org/news/2017-07-12-clojurescript-is-not-an-island-integrating-node-modules">amazing work</a>
 recently with regard to interop with the Javascript ecosystem. I was surprised to

@@ -17,8 +17,9 @@
       <pubDate>Wed, 26 Jul 2017 15:58:36 -0400</pubDate>
       
       <guid>/posts/react-figwheel-npm/</guid>
-      <description>The Clojurescript team has been doing some amazing work recently with regard to interop with the Javascript ecosystem. I was surprised to discover that it&amp;rsquo;s easier to set up a Clojurescript project now than a modern Javascript web app.
-Our Web UI stack at BlackSky is React paired with Redux, ImmutableJS, and a workflow powered by Webpack (transpilation with Babel, Hot Module reloading, code splitting, ESLint, Prettier &amp;ndash; the works).</description>
+      <description>Edit: 2017-07-30 Since publishing the original post, the Clojurescript team implemented CLJS-2280, which handles the work of shimming process.env for us.
+As if that wasn&amp;rsquo;t enough, the team also released Clojurescript 1.9.854, meaning that we no longer need to build the latest version of Clojurescript from source!
+The other thing that changed is that :npm-deps are no longer installed automatically, and the newly-added :install-deps build property is not yet supported in lein-cljsbuild, so I&amp;rsquo;m holding off on updating the tutorial until cljsbuild catches up for us 👍</description>
     </item>
     
   </channel>
