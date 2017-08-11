@@ -1,0 +1,197 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="ajpierce dot github dot io">
+		
+		<meta name="generator" content="Hugo 0.25.1" />
+		<title>React in Figwheel from Scratch, Again! &middot; ajpierce</title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="/css/monosocialiconsfont.css">
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='/'> <span class="arrow">←</span>Home</a>
+	
+  
+	<a href='/about'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        React in Figwheel from Scratch, Again!
+                    </h1>
+                    <h2 class="headline">
+                    Aug 11, 2017 17:11
+                    · 397 words
+                    · 2 minutes read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    
+
+<p>The Clojurescript team continues to delight!</p>
+
+<p>The <a href="/posts/react-figwheel-npm/">last time</a> we set up a new <a href="https://github.com/bhauman/lein-figwheel">Figwheel</a>
+project to demo Javascript/Clojurescript interop, we had to:</p>
+
+<ul>
+<li>Build Clojurescript from Scratch</li>
+<li>Update dependency versions in the Figwheel template</li>
+<li>Shim <code>process.env/NODE_ENV</code> so the <code>:closure-defines</code> could find it</li>
+<li>Add our shim to <code>:preloads</code> so NPM libs could reference <code>NODE_ENV</code></li>
+</ul>
+
+<p>Now, none of this is necessary!</p>
+
+<p>Starting a Clojurescript/Figwheel project from scratch and configuring it to use
+Javascript modules from NPM is now a 1 minute process. <em>One minute!</em></p>
+
+<h2 id="step-1-start-a-new-fighweel-project">Step 1: Start a new Fighweel Project</h2>
+
+<pre><code>$ lein new figwheel splort
+</code></pre>
+
+<h2 id="step-2-modify-project-clj">Step 2: Modify project.clj</h2>
+
+<p>We need to add NPM dependencies, install them, and tell the closure compiler what
+our NODE_ENV is.  We do that by adding the following three lines to the <code>:compile</code>
+section of our <code>&quot;dev&quot;</code> build in <code>:cljsbuild</code>:</p>
+
+<pre><code>:closure-defines {process.env/NODE_ENV &quot;development&quot;}
+:npm-deps {:react &quot;15.6.1&quot; :react-dom &quot;15.6.1&quot;}
+:install-deps true
+</code></pre>
+
+<p>Then, in the <code>&quot;min&quot;</code> section:</p>
+
+<pre><code>:closure-defines {process.env/NODE_ENV &quot;production&quot;}
+:npm-deps {:react &quot;15.6.1&quot; :react-dom &quot;15.6.1&quot;}
+:install-deps true
+</code></pre>
+
+<h2 id="step-3-use-react-natively-in-clojurescript">Step 3: Use React (natively!) in Clojurescript</h2>
+
+<p>Paste the following into <code>src/splort/core.cljs</code>:</p>
+
+<pre><code>(ns splort.core
+  (:require [react :refer [createElement]]
+            [react-dom :refer [render]]))
+
+(js/console.log &quot;Node enviornment is&quot; process.env/NODE_ENV)
+
+(def appDiv (.getElementById js/document &quot;app&quot;))
+
+(render
+  (createElement &quot;h1&quot; nil &quot;Hello, World!&quot;)
+  appDiv)
+</code></pre>
+
+<h2 id="step-4-build-it">Step 4: Build it!</h2>
+
+<pre><code>$ lein figwheel
+</code></pre>
+
+<p>If everything goes well, the site should render like so:</p>
+
+<p><img src="/react-figwheel-npm2.png" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>It hasn&rsquo;t even been two weeks since the <a href="/posts/react-figwheel-npm/">first</a>
+Figwheel/NPM interop tutorial went live, and the Clojurescript community has
+already reduced the friction for JS interop by an order of magnitude.</p>
+
+<p>I don&rsquo;t think it can be overstated that you get all the benefits of the Google
+Closure compiler, out of the box, for free.  Dead code elimination, Javascript
+compilation, better production assets than you can get with hours of Webpack
+tuning, and with all the benefits of Clojure to accompany it.</p>
+
+<h2 id="with-gratitude">With Gratitude</h2>
+
+<p>All of this is made possible thanks to the hard work of the Clojurescript
+community.</p>
+
+<p>Special thanks to:</p>
+
+<ul>
+<li><a href="https://twitter.com/swannodette">David Nolen</a> for submitting <a href="https://github.com/clojure/clojurescript/commit/537f60c975a29983c62647b4ea67b0bc08979366">CLJS 2280</a> mere hours after reading the previous tutorial</li>
+<li><a href="https://twitter.com/bhauman">Bruce Hauman</a> for his patience and guidance with <a href="https://github.com/bhauman/lein-figwheel/pull/588">PR 588</a></li>
+<li><a href="https://twitter.com/mfikes">Mike Fikes</a> for being the first person to retweet the first tutorial, giving it the visibility necessary to affect positive change</li>
+</ul>
+
+<p>I&rsquo;ve had such a positive experience interacting with members of the Clojurescript
+community. I&rsquo;m convinced that it&rsquo;s the excellent people (in addition to the
+excellent tooling) that makes Clojure such a delightful language to work with.</p>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+    <p class="small">
+    
+       © Copyright 2017 <i class="fa fa-heart" aria-hidden="true"></i> ajpierce dot github dot io
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103428432-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+</footer>
+
+        </section>
+
+        <script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

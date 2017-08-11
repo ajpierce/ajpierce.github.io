@@ -6,10 +6,22 @@
     <description>Recent content on ajpierce</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jul 2017 15:58:36 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2017 17:11:21 -0400</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>React in Figwheel from Scratch, Again!</title>
+      <link>/posts/react-figwheel-npm-2/</link>
+      <pubDate>Fri, 11 Aug 2017 17:11:21 -0400</pubDate>
+      
+      <guid>/posts/react-figwheel-npm-2/</guid>
+      <description>The Clojurescript team continues to delight!
+The last time we set up a new Figwheel project to demo Javascript/Clojurescript interop, we had to:
+ Build Clojurescript from Scratch Update dependency versions in the Figwheel template Shim process.env/NODE_ENV so the :closure-defines could find it Add our shim to :preloads so NPM libs could reference NODE_ENV  Now, none of this is necessary!
+Starting a Clojurescript/Figwheel project from scratch and configuring it to use Javascript modules from NPM is now a 1 minute process.</description>
+    </item>
     
     <item>
       <title>React in Figwheel from Scratch</title>
@@ -17,7 +29,8 @@
       <pubDate>Wed, 26 Jul 2017 15:58:36 -0400</pubDate>
       
       <guid>/posts/react-figwheel-npm/</guid>
-      <description>Edit: 2017-07-30 Since publishing the original post, the Clojurescript team implemented CLJS-2280, which handles the work of shimming process.env for us.
+      <description>Update 2: 2017-08-10 This tutorial is out of date! Check out the updated version!
+Update: 2017-07-30 Since publishing the original post, the Clojurescript team implemented CLJS-2280, which handles the work of shimming process.env for us.
 As if that wasn&amp;rsquo;t enough, the team also released Clojurescript 1.9.854, meaning that we no longer need to build the latest version of Clojurescript from source!
 The other thing that changed is that :npm-deps are no longer installed automatically, and the newly-added :install-deps build property is not yet supported in lein-figwheel, so I&amp;rsquo;m holding off on updating the tutorial until Figwheel catches up for us 👍</description>
     </item>
