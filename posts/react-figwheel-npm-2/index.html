@@ -54,13 +54,13 @@
                 <section id="post-body">
                     
 
-<p>The Clojurescript team continues to delight!</p>
+<p>The ClojureScript team continues to delight!</p>
 
 <p>The <a href="/posts/react-figwheel-npm/">last time</a> we set up a new <a href="https://github.com/bhauman/lein-figwheel">Figwheel</a>
-project to demo Javascript/Clojurescript interop, we had to:</p>
+project to demo Javascript/ClojureScript interop, we had to:</p>
 
 <ul>
-<li>Build Clojurescript from Scratch</li>
+<li>Build ClojureScript from Scratch</li>
 <li>Update dependency versions in the Figwheel template</li>
 <li>Shim <code>process.env/NODE_ENV</code> so the <code>:closure-defines</code> could find it</li>
 <li>Add our shim to <code>:preloads</code> so NPM libs could reference <code>NODE_ENV</code></li>
@@ -68,7 +68,7 @@ project to demo Javascript/Clojurescript interop, we had to:</p>
 
 <p>Now, none of this is necessary!</p>
 
-<p>Starting a Clojurescript/Figwheel project from scratch and configuring it to use
+<p>Starting a ClojureScript/Figwheel project from scratch and configuring it to use
 Javascript modules from NPM is now a 1 minute process. <em>One minute!</em></p>
 
 <h2 id="step-1-start-a-new-fighweel-project">Step 1: Start a new Fighweel Project</h2>
@@ -94,7 +94,7 @@ section of our <code>&quot;dev&quot;</code> build in <code>:cljsbuild</code>:</p
 :install-deps true
 </code></pre>
 
-<h2 id="step-3-use-react-natively-in-clojurescript">Step 3: Use React (natively!) in Clojurescript</h2>
+<h2 id="step-3-use-react-natively-in-clojurescript">Step 3: Use React (natively!) in ClojureScript</h2>
 
 <p>Paste the following into <code>src/splort/core.cljs</code>:</p>
 
@@ -123,7 +123,7 @@ section of our <code>&quot;dev&quot;</code> build in <code>:cljsbuild</code>:</p
 <h2 id="conclusion">Conclusion</h2>
 
 <p>It hasn&rsquo;t even been two weeks since the <a href="/posts/react-figwheel-npm/">first</a>
-Figwheel/NPM interop tutorial went live, and the Clojurescript community has
+Figwheel/NPM interop tutorial went live, and the ClojureScript community has
 already reduced the friction for JS interop by an order of magnitude.</p>
 
 <p>I don&rsquo;t think it can be overstated that you get all the benefits of the Google
@@ -133,7 +133,7 @@ tuning, and with all the benefits of Clojure to accompany it.</p>
 
 <h2 id="with-gratitude">With Gratitude</h2>
 
-<p>All of this is made possible thanks to the hard work of the Clojurescript
+<p>All of this is made possible thanks to the hard work of the ClojureScript
 community.</p>
 
 <p>Special thanks to:</p>
@@ -144,7 +144,7 @@ community.</p>
 <li><a href="https://twitter.com/mfikes">Mike Fikes</a> for being the first person to retweet the first tutorial, giving it the visibility necessary to affect positive change</li>
 </ul>
 
-<p>I&rsquo;ve had such a positive experience interacting with members of the Clojurescript
+<p>I&rsquo;ve had such a positive experience interacting with members of the ClojureScript
 community. I&rsquo;m convinced that it&rsquo;s the excellent people (in addition to the
 excellent tooling) that makes Clojure such a delightful language to work with.</p>
 

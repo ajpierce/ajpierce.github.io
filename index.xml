@@ -17,10 +17,10 @@
       <pubDate>Fri, 11 Aug 2017 17:11:21 -0400</pubDate>
       
       <guid>/posts/react-figwheel-npm-2/</guid>
-      <description>The Clojurescript team continues to delight!
-The last time we set up a new Figwheel project to demo Javascript/Clojurescript interop, we had to:
- Build Clojurescript from Scratch Update dependency versions in the Figwheel template Shim process.env/NODE_ENV so the :closure-defines could find it Add our shim to :preloads so NPM libs could reference NODE_ENV  Now, none of this is necessary!
-Starting a Clojurescript/Figwheel project from scratch and configuring it to use Javascript modules from NPM is now a 1 minute process.</description>
+      <description>The ClojureScript team continues to delight!
+The last time we set up a new Figwheel project to demo Javascript/ClojureScript interop, we had to:
+ Build ClojureScript from Scratch Update dependency versions in the Figwheel template Shim process.env/NODE_ENV so the :closure-defines could find it Add our shim to :preloads so NPM libs could reference NODE_ENV  Now, none of this is necessary!
+Starting a ClojureScript/Figwheel project from scratch and configuring it to use Javascript modules from NPM is now a 1 minute process.</description>
     </item>
     
     <item>
