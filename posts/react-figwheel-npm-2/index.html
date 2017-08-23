@@ -43,8 +43,8 @@
                     </h1>
                     <h2 class="headline">
                     Aug 11, 2017 17:11
-                    · 403 words
-                    · 2 minutes read
+                    · 467 words
+                    · 3 minutes read
                       <span class="tags">
                       
                       </span>
@@ -53,6 +53,27 @@
                 
                 <section id="post-body">
                     
+
+<h2 id="update-2017-08-22">Update 2017-08-22</h2>
+
+<p>Looks like the latest version of Clojurescript (1.9.908) broke something! If
+you see an error that looks like this:</p>
+
+<p><img src="/post2-error.jpg" /></p>
+
+<p>&hellip;then you&rsquo;ll have to downgrade Clojurescript to version 1.9.854. In the
+<code>:dependencies</code> block near the top of your <code>project.clj</code>, modify the Clojurescript
+version to look like:</p>
+
+<pre><code>[org.clojure/clojurescript &quot;1.9.854&quot;]
+</code></pre>
+
+<p>After that, restart figwheel and you should be good to go!</p>
+
+<p>Thanks to <a href="https://twitter.com/RealGeneKim">Gene Kim</a> for pointing this out!
+<hr/></p>
+
+<h2 id="original-post">Original Post</h2>
 
 <p>The ClojureScript team continues to delight!</p>
 
@@ -79,7 +100,7 @@ Javascript modules from NPM is now a 1 minute process. <em>One minute!</em></p>
 <h2 id="step-2-modify-project-clj">Step 2: Modify project.clj</h2>
 
 <p>We need to add NPM dependencies, install them, and tell the closure compiler what
-our NODE_ENV is.  We do that by adding the following three lines to the <code>:compile</code>
+our NODE_ENV is.  We do that by adding the following three lines to the <code>:compiler</code>
 section of our <code>&quot;dev&quot;</code> build in <code>:cljsbuild</code>:</p>
 
 <pre><code>:closure-defines {process.env/NODE_ENV &quot;development&quot;}
