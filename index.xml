@@ -17,10 +17,10 @@
       <pubDate>Fri, 11 Aug 2017 17:11:21 -0400</pubDate>
       
       <guid>/posts/react-figwheel-npm-2/</guid>
-      <description>The ClojureScript team continues to delight!
-The last time we set up a new Figwheel project to demo Javascript/ClojureScript interop, we had to:
- Build ClojureScript from Scratch Update dependency versions in the Figwheel template Shim process.env/NODE_ENV so the :closure-defines could find it Add our shim to :preloads so NPM libs could reference NODE_ENV  Now, none of this is necessary!
-Starting a ClojureScript/Figwheel project from scratch and configuring it to use Javascript modules from NPM is now a 1 minute process.</description>
+      <description>Update 2017-08-22 Looks like the latest version of Clojurescript (1.9.908) broke something! If you see an error that looks like this:
+&amp;hellip;then you&amp;rsquo;ll have to downgrade Clojurescript to version 1.9.854. In the :dependencies block near the top of your project.clj, modify the Clojurescript version to look like:
+[org.clojure/clojurescript &amp;quot;1.9.854&amp;quot;]  After that, restart figwheel and you should be good to go!
+Thanks to Gene Kim for pointing this out!</description>
     </item>
     
     <item>
