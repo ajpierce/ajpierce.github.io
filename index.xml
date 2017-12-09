@@ -6,10 +6,20 @@
     <description>Recent content on ajpierce</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Aug 2017 17:11:21 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 09 Dec 2017 11:36:33 -0500</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interacting with the Ethereum Blockchain in Clojure</title>
+      <link>/posts/ethereum-blockchain-clojure/</link>
+      <pubDate>Sat, 09 Dec 2017 11:36:33 -0500</pubDate>
+      
+      <guid>/posts/ethereum-blockchain-clojure/</guid>
+      <description>Recently, the Ethereum blockchain has been the subject of much interest, driven in part by the huge success of CryptoKitties. Unfortunately for those of us hoping to perform kitty market analysis using our favorite language, there isn&amp;rsquo;t any good information for how to interact with the Ethereum Blockchain in Clojure. This blog post aims to get you up and running talking to the Ethereum Blockchain.
+Prerequisites This post assumes you have a Geth node running locally on the default port.</description>
+    </item>
     
     <item>
       <title>ClojureScript: NPM in Figwheel in 60 Seconds</title>
